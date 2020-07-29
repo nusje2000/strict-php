@@ -1,0 +1,7 @@
+parameters:
+    level: max
+    paths:
+        - src
+        - tests
+    ignoreErrors:
+        - '/Parameter #1 \$subject of static method Nusje2000\\StrictPhp\\Json::encode\(\) expects array\|bool\|float\|int\|object\|string\|null, resource\|false given\./'

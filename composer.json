@@ -1,0 +1,40 @@
+{
+    "name": "nusje2000/strict-php",
+    "description": "A wrapper for standard php functions with correct error handling and improved typing",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "nusje2000",
+            "email": "maarten.nusteling@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^8.5",
+        "vimeo/psalm": "^3.12",
+        "phpstan/phpstan": "^0.12.33",
+        "nikic/php-parser": "4.6.*"
+    },
+    "scripts": {
+        "phpstan": [
+            "vendor/bin/phpstan analyze"
+        ],
+        "psalm": [
+            "vendor/bin/psalm"
+        ],
+        "phpunit": [
+            "vendor/bin/phpunit ./tests"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "Nusje2000\\StrictPhp\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nusje2000\\StrictPhp\\Tests\\": "tests"
+        }
+    }
+}
