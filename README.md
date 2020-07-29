@@ -55,9 +55,7 @@ use Nusje2000\StrictPhp\Json;
 Json::encode(['key' => 'value']);
 ```
 #### decode (replaces json_decode)
-To decode a json formatted string, you can use `Json::decode()`. This function has multiple return types because the
-content type can vary.
-
+To decode a json formatted string, you can use `Json::decode()`. This function has multiple return types.
 ```php
 use Nusje2000\StrictPhp\Json;
 
