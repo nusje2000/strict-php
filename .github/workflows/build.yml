@@ -22,44 +22,20 @@ jobs:
                 run: |
                     composer install --prefer-dist --no-progress --no-suggest
 
-            -   name: Upload artifact
-                uses: actions/upload-artifact@v2
-                with:
-                    name: build
-                    path: ./
-
-    psalm:
-        needs: build
-        runs-on: ubuntu-latest
-        steps:
-            -   name: Download build
-                uses: actions/download-artifact@v2
-                with:
-                    name: build
             -   name: Psalm
                 run: |
                     composer run psalm
 
-    php_stan:
-        needs: build
-        runs-on: ubuntu-latest
-        steps:
-            -   name: Download build
-                uses: actions/download-artifact@v2
-                with:
-                    name: build
             -   name: PHP Stan
                 run: |
                     composer run phpstan
 
-    php_unit:
-        needs: build
-        runs-on: ubuntu-latest
-        steps:
-            -   name: Download build
-                uses: actions/download-artifact@v2
-                with:
-                    name: build
             -   name: PHP Unit
                 run: |
                     composer run phpunit
+
+            -   name: Upload coverage report
+                uses: actions/upload-artifact@v2
+                with:
+                    name: code-coverage
+                    path: ./coverage

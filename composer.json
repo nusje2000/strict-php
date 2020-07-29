@@ -24,7 +24,7 @@
             "vendor/bin/psalm"
         ],
         "phpunit": [
-            "vendor/bin/phpunit ./tests"
+            "vendor/bin/phpunit --coverage-html ./coverage"
         ]
     },
     "autoload": {
